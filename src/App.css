@@ -1,14 +1,15 @@
 * {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 body {
   background-color: #f5f6ff;
 }
 .container {
-  padding: 10px;
-  /* background-color: red; */
+  padding: 50px;
   max-width: fit-content;
-  margin: 50px auto;
+  margin: 10px auto;
 }
 .btn {
   border: none;
@@ -34,20 +35,24 @@ body {
   align-items: center;
 }
 .addContainer form {
-  width: 420px;
+  width: 80%;
+  height: 500px;
   background-color: white;
   display: flex;
   flex-direction: column;
   padding: 50px 40px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
+  overflow-y: auto;
 }
 .addContainer form label {
   font-size: 18px;
 }
-.addContainer form input {
+.addContainer form input,
+.addContainer form select {
+  width: 100%;
   font-size: 18px;
-  padding: 5px;
+  padding: 15px;
   margin-top: 5px;
   margin-bottom: 10px;
 }
@@ -81,7 +86,8 @@ body {
 }
 .tableContainer table thead tr th,
 .tableContainer table tbody tr td {
-  min-width: 200px;
+  min-width: 100px;
+  max-width: fit-content;
   padding: 7px;
   text-align: center;
 }

@@ -10,14 +10,22 @@ function App() {
   const [addSection, setAddSection] = useState(false);
   const [editSection, setEditSection] = useState(false);
   const [formData, setFormData] = useState({
+    nim: "",
     name: "",
-    email: "",
+    gender: "",
+    tgl: "",
+    religi: "",
     mobile: "",
+    email: "",
   });
   const [formDataEdit, setFormDataEdit] = useState({
+    nim: "",
     name: "",
-    email: "",
+    gender: "",
+    tgl: "",
+    religi: "",
     mobile: "",
+    email: "",
     _id: "",
   });
   const [dataList, setDataList] = useState([]);
@@ -41,9 +49,13 @@ function App() {
       alert(data.data.message);
       getFetchData();
       setFormData({
+        nim: "",
         name: "",
-        email: "",
+        gender: "",
+        tgl: "",
+        religi: "",
         mobile: "",
+        email: "",
       });
     }
   };
@@ -118,9 +130,13 @@ function App() {
           <table>
             <thead>
               <tr>
-                <th>Name</th>
+                <th>NIM</th>
+                <th>Nama</th>
+                <th>Jenis Kelamin</th>
+                <th>Tanggal Lahir</th>
+                <th>Agama</th>
+                <th>No Telp</th>
                 <th>Email</th>
-                <th>Mobile</th>
                 <th>Action</th>
               </tr>
             </thead>
@@ -130,9 +146,13 @@ function App() {
                   console.log(el);
                   return (
                     <tr>
+                      <td>{el.nim}</td>
                       <td>{el.name}</td>
-                      <td>{el.email}</td>
+                      <td>{el.gender}</td>
+                      <td>{el.tgl}</td>
+                      <td>{el.religi}</td>
                       <td>{el.mobile}</td>
+                      <td>{el.email}</td>
                       <td>
                         <button
                           className="btn btn-edit"
