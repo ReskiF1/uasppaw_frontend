@@ -75,6 +75,12 @@ body {
   cursor: pointer;
 }
 
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
 .tableContainer {
   margin-top: 50px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
@@ -87,9 +93,10 @@ body {
 .tableContainer table thead tr th,
 .tableContainer table tbody tr td {
   min-width: 100px;
-  max-width: fit-content;
+  max-width: 200px;
   padding: 7px;
   text-align: center;
+  overflow-x: auto;
 }
 .tableContainer table tbody tr {
   border: 1px solid #c9c5c2;
@@ -110,4 +117,9 @@ body {
 .btn-delete {
   background-color: red;
   color: white;
+}
+
+.footer {
+  text-align: center;
+  bottom: 0;
 }

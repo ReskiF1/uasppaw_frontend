@@ -1,10 +1,15 @@
 import "./App.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Formtable from "./components/Formtable";
+import Formtable from "./components/formtable";
 
 axios.defaults.baseURL = "http://localhost:8080/";
 const url = "https://uasppawbackend.adaptable.app/";
+
+const formatDate = (dateString) => {
+  const options = { year: "numeric", month: "2-digit", day: "2-digit" };
+  return new Date(dateString).toLocaleDateString(undefined, options);
+};
 
 function App() {
   const [addSection, setAddSection] = useState(false);
@@ -89,6 +94,7 @@ function App() {
       setEditSection(false);
     }
   };
+
   const handleEditOnChange = async (e) => {
     const { value, name } = e.target;
     setFormDataEdit((preve) => {
@@ -149,7 +155,7 @@ function App() {
                       <td>{el.nim}</td>
                       <td>{el.name}</td>
                       <td>{el.gender}</td>
-                      <td>{el.tgl}</td>
+                      <td>{formatDate(el.tgl)}</td>
                       <td>{el.religi}</td>
                       <td>{el.mobile}</td>
                       <td>{el.email}</td>
@@ -177,6 +183,10 @@ function App() {
           </table>
         </div>
       </div>
+
+      <footer className="footer">
+        <p>&copy; 2024 Reski Firmansyah. Dibuat untuk memenuhi tugas PPAW.</p>
+      </footer>
     </>
   );
 }
